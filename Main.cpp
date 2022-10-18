@@ -9,6 +9,13 @@
 #include "imgui/imgui_impl_opengl3.h"
 #include "InitialiseWindow.h"
 
+#define EDITOR_WINDOW_SIZE ImVec2((glfwGetVideoMode(glfwGetPrimaryMonitor())->height) / 1.5, (glfwGetVideoMode(glfwGetPrimaryMonitor())->width) / 4.5)
+#define EDITOR_WINDOW_SIZE_X (glfwGetVideoMode(glfwGetPrimaryMonitor())->height) / 1.5
+#define EDITOR_WINDOW_SIZE_Y (glfwGetVideoMode(glfwGetPrimaryMonitor())->width) / 4.5
+
+
+
+
 int main(int agrv, char* argv[]) {
 
 	// set parametters of OpenGL
@@ -65,7 +72,7 @@ int main(int agrv, char* argv[]) {
 #define SRC_WIDTH = glfwGetVideoMode(glfwGetPrimaryMonitor())->width / 2.0f;
 #define SRC_HEIGHT = glfwGetVideoMode(glfwGetPrimaryMonitor())->height / 2.0f;
 	InitialiseWindow windowGui(window);
-
+	
 	while (!glfwWindowShouldClose(window)) {
 		glfwGetFramebufferSize(window, lastX,  lastY);
 		glViewport(0, 0, *lastX, *lastY);
@@ -78,6 +85,7 @@ int main(int agrv, char* argv[]) {
 
 		ImGui::Begin("test", nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize);
 
+		ImGui::Button("add", ImVec2(EDITOR_WINDOW_SIZE_X / 5, EDITOR_WINDOW_SIZE_Y / 10));
 		ImGui::End();
 		windowGui.EndFrame();
 		glEnable(GL_DEPTH_TEST);

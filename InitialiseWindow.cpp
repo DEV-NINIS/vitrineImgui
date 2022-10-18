@@ -14,7 +14,7 @@ InitialiseWindow::InitialiseWindow(GLFWwindow* window) {
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO();
 	(void)io;
-	io.Fonts->AddFontFromFileTTF("resources/textFont/Merriweather-Regular.ttf", 17);
+	io.Fonts->AddFontFromFileTTF("resources/textFont/Heavitas.ttf", 10);
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 460");
@@ -47,9 +47,9 @@ InitialiseWindow::InitialiseWindow(GLFWwindow* window) {
 	style->Colors[ImGuiCol_TitleBgActive] = ImColor(53, 59, 91, 200);
 	style->Colors[ImGuiCol_TitleBgCollapsed] = ImColor(53, 59, 91, 200);
 
-	style->Colors[ImGuiCol_Button] = ImColor(53, 59, 91, 150);
-	style->Colors[ImGuiCol_ButtonActive] = ImColor(53, 59, 91, 200);
-	style->Colors[ImGuiCol_ButtonHovered] = ImColor(53, 59, 91, 200);
+	style->Colors[ImGuiCol_Button] = ImColor(222, 46, 82, 150);
+	style->Colors[ImGuiCol_ButtonActive] = ImColor(255, 127, 163, 200);
+	style->Colors[ImGuiCol_ButtonHovered] = ImColor(227, 24, 82, 150);
 
 	style->Colors[ImGuiCol_Separator] = ImColor(53, 59, 91, 200);
 	style->Colors[ImGuiCol_SeparatorActive] = ImColor(53, 59, 91, 200);
@@ -65,17 +65,17 @@ InitialiseWindow::InitialiseWindow(GLFWwindow* window) {
 	style->Colors[ImGuiCol_HeaderActive] = ImColor(0, 0, 0, 0);
 
 	style->SelectableTextAlign = ImVec2(0.1, 0.1);
-	style->PopupBorderSize = 5;
-	style->FrameBorderSize = 3;
-	style->ChildBorderSize = 3.0;
-	style->TabBorderSize = 3.0;
+	style->PopupBorderSize = 0;
+	style->FrameBorderSize = 0;
+	style->ChildBorderSize = 0;
+	style->TabBorderSize = 0;
 	style->WindowBorderSize = 3;
-	style->PopupRounding = 5;
-	style->ChildRounding = 5;
-	style->FrameRounding = 5;
-	style->GrabRounding = 5;
+	style->PopupRounding = 15;
+	style->ChildRounding = 15;
+	style->FrameRounding = 15;
+	style->GrabRounding = 15;
 	style->WindowRounding = 10;
-	style->TabRounding = 5;
+	style->TabRounding = 15;
 	style->MouseCursorScale = 50;
 	style->IndentSpacing = 5;
 
